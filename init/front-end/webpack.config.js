@@ -21,4 +21,14 @@ module.exports = {
     module: {
         rules: [],
     },
+
+    module: {
+        rules: [
+            {
+                test: /\.(css)$/,
+                use: ["style-loader", "css-loader"],
+            },
+        ],
+    },
 };
+
