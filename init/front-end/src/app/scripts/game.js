@@ -19,9 +19,11 @@ var CARD_TEMPLATE = ""
   // TODO #export-functions: export function GameComponent
   // TODO #class: use the ES6 class keyword
   // TODO #extends: extend Component
+import { Component } from "./component";
   /* class GameComponent constructor */
-  export class GameComponent {
+  export class GameComponent extends Component{
     constructor() {
+      super(template)
 
     // TODO #extends: call super(template)
     // gather parameters from URL
@@ -259,8 +261,9 @@ var CARDS_IMAGE = [
 // TODO #class: use the ES6 class keyword
   // TODO #extends: extends Component
   /* class CardComponent constructor */
-  class CardComponent {
+  class CardComponent extends Component {
     constructor(id) {
+      super(CARD_TEMPLATE)
 
     // TODO #extends: call super(CARD_TEMPLATE)
     // is this card flipped?

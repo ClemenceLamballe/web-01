@@ -6,11 +6,15 @@ import template from "../views/score.html";
   // TODO #export-functions: export function ScoreComponent
   // TODO #class: use the ES6 class keyword
 import { parseUrl } from "./utils";
+import {Component} from "./component";
   /* class ScoreComponent constructor */
-  export class ScoreComponent {
+
+
+  export class ScoreComponent extends Component{
     constructor() {
 
       // TODO #extends: call super(template)
+      super(template)
       var params = parseUrl();
       // TODO #import-html: assign template to this.template
       this.template = template;
