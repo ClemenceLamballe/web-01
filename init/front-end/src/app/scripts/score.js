@@ -15,7 +15,7 @@ import {Component} from "./component";
 
       // TODO #extends: call super(template)
       super(template)
-      var params = parseUrl();
+      let params = parseUrl();
       // TODO #import-html: assign template to this.template
       this.template = template;
       this.name = params.name;
