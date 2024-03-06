@@ -6,18 +6,23 @@ import template from "../views/welcome.html";
   // TODO #export-functions: export function WelcomeComponent
   // TODO #class: use the ES6 class keyword
   /* class WelcomeComponent constructor  */
-  export function WelcomeComponent() {
+  export class WelcomeComponent {
+    constructor() {
+
     // TODO #extends: call super(template)
     // TODO #import-html: assign template to this.template
     this.template = template;
-  }
+    }
+
+
+
 
   // TODO #export-functions: remove this line
   // put component in global scope, to be runnable right from the HTML.
   //window.WelcomeComponent = WelcomeComponent;
   // TODO #class: turn function into a method of WelcomeComponent
   /* method WelcomeComponent.init */
-  WelcomeComponent.prototype.init = function init() {
+  init() {
     var form = document.querySelector("form.form-signin");
 
     form.addEventListener(
@@ -32,7 +37,7 @@ import template from "../views/welcome.html";
           var name = event.srcElement.querySelector("#nickname").value;
           var size = parseInt(event.srcElement.querySelector("#size").value);
 
-          _startGame(name, size);
+          new _startGame(name, size);
         }
       }.bind(this),
       false
@@ -40,12 +45,15 @@ import template from "../views/welcome.html";
 
     return this;
   };
+  }
 
   // TODO #class: turn function into a method of WelcomeComponent
-  function _startGame(name, size) {
+  class _startGame {
+    constructor(name, size) {
     // TODO #spa: replace with './#game'
     var gamePage = "./#game";
     // TODO #template-literals:  use template literals (backquotes)
     window.location = gamePage + "?name=" + name + "&size=" + size;
+    }
   }
 //})();
