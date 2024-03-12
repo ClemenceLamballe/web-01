@@ -29,8 +29,8 @@ import {Component} from "./component";
 
     form.addEventListener(
       "submit",
-      // TODO #arrow-function: use arrow function instead.
-      function (event) {
+      // TODONE #arrow-function: use arrow function instead.
+       (event) =>{
         event.preventDefault();
         if (form.checkValidity() === false) {
           event.stopPropagation();
@@ -42,7 +42,7 @@ import {Component} from "./component";
           new _startGame(name, size);
           //this.
         }
-      }.bind(this),
+      },
       false
     );
 
@@ -55,8 +55,8 @@ import {Component} from "./component";
     constructor(name, size) {
     // TODO #spa: replace with './#game'
     let gamePage = "./#game";
-    // TODO #template-literals:  use template literals (backquotes)
-    window.location = gamePage + "?name=" + name + "&size=" + size;
+    // TODONE #template-literals:  use template literals (backquotes)
+    window.location = `${gamePage}?name=${name}&size=${size}`;
     }
   }
 //})();

@@ -48,8 +48,8 @@ import { Component } from "./component";
   init(){
     // fetch the cards configuration from the server
     this.fetchConfig(
-      // TODO #arrow-function: use arrow function instead.
-      function (config) {
+      // TODONE #arrow-function: use arrow function instead.
+      (config) =>{
         this._config = config;
         this._boardElement = document.querySelector(".cards");
 
@@ -69,16 +69,16 @@ import { Component } from "./component";
 
             card.getElement().addEventListener(
                 "click",
-                // TODO #arrow-function: use arrow function instead.
-                function () {
+                // TODONE #arrow-function: use arrow function instead.
+                 () =>{
                   this._flipCard(card);
-                }.bind(this)
+                }
             );
 
         }
 
         this.start();
-      }.bind(this)
+      }
     );
     }
 
@@ -95,17 +95,18 @@ import { Component } from "./component";
   start(){
     this._startTime = Date.now();
     let seconds = 0;
-    // TODO #template-literals:  use template literals (backquotes)
+    // TODONE #template-literals:  use template literals (backquotes)
     document.querySelector("nav .navbar-title").textContent =
-      "Player: " + this._name + ". Elapsed time: " + seconds++;
+        `Player:${this._name}.Elapsed time:${seconds++}`;
 
     this._timer = setInterval(
-      // TODO #arrow-function: use arrow function instead.
-      function () {
-        // TODO #template-literals:  use template literals (backquotes)
+      // TODONE #arrow-function: use arrow function instead.
+       () => {
+        // TODONE #template-literals:  use template literals (backquotes)
         document.querySelector("nav .navbar-title").textContent =
-          "Player: " + this._name + ". Elapsed time: " + seconds++;
-      }.bind(this),
+
+            `Player:${this._name}.Elapsed time:${seconds++}`;
+      },
       1000
     );
   }
@@ -120,11 +121,11 @@ import { Component } from "./component";
         ? new XMLHttpRequest()
         : new ActiveXObject("Microsoft.XMLHTTP");
 
-    // TODO #template-literals:  use template literals (backquotes)
-    xhr.open("get", environment.api.host + "/board?size=" + this._size, true);
+    // TODONE #template-literals:  use template literals (backquotes)
+    xhr.open("get", `${environment.api.host}/board?size=${this._size}`, true);
 
-    // TODO #arrow-function: use arrow function instead.
-    xhr.onreadystatechange = function () {
+    // TODONE #arrow-function: use arrow function instead.
+    xhr.onreadystatechange = () =>{
       let status;
       let data;
       // https://xhr.spec.whatwg.org/#dom-xmlhttprequest-readystate
@@ -152,21 +153,15 @@ import { Component } from "./component";
     );
     clearInterval(this._timer);
 
-    setTimeout(
-      // TODO #arrow-function: use arrow function instead.
-      function () {
+    setTimeout(() =>{
+      // TODONE #arrow-function: use arrow function instead.
+
         // TODO #spa: replace with './#score'
         let scorePage = "./#score";
-        // TODO #template-literals:  use template literals (backquotes)
+        // TODONE #template-literals:  use template literals (backquotes)
         window.location =
-          scorePage +
-          "?name=" +
-          this._name +
-          "&size=" +
-          this._size +
-          "&time=" +
-          timeElapsedInSeconds;
-      }.bind(this),
+            `${scorePage}?name=${this._name}.&size=${this._size}.&time=${timeElapsedInSeconds}`;
+      },
       750
     );
   }
@@ -212,8 +207,8 @@ _flipCard(card){
         // cards did not match
         // wait a short amount of time before hiding both cards
         setTimeout(
-          // TODO #arrow-function: use arrow function instead.
-          function () {
+          // TODONE #arrow-function: use arrow function instead.
+          () => {
             // hide the cards
             this._flippedCard.flip();
             card.flip();
@@ -221,7 +216,7 @@ _flipCard(card){
 
             // reset flipped card for the next turn.
             this._flippedCard = null;
-          }.bind(this),
+          },
           500
         );
       }
