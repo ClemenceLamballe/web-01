@@ -55,27 +55,24 @@ import { Component } from "./component";
 
         // create cards out of the config
         this._cards = [];
-        // TODO #functional-programming: use Array.map() instead.
-        for (let i in this._config.ids) {
-          this._cards[i] = new CardComponent(this._config.ids[i]);
-        }
+        // TODONE #functional-programming: use Array.map() instead.
+          this._config.ids.forEach(id => {
+          this._cards = this._config.ids.map(id => new CardComponent(id));
+        });
 
-        // TODO #functional-programming: use Array.forEach() instead.
+        // TODONE #functional-programming: use Array.forEach() instead.
 
-        for (let i in this._cards) {
-          let card = this._cards[i];
-          //la fonction :
-            this._boardElement.appendChild(card.getElement());
+          this._cards.forEach(card => {
+              this._boardElement.appendChild(card.getElement());
 
-            card.getElement().addEventListener(
-                "click",
-                // TODONE #arrow-function: use arrow function instead.
-                 () =>{
-                  this._flipCard(card);
-                }
-            );
-
-        }
+              card.getElement().addEventListener(
+                  "click",
+                  // TODONE #arrow-function: use arrow function instead.
+                  () => {
+                      this._flipCard(card);
+                  }
+              );
+          });
 
         this.start();
       }
