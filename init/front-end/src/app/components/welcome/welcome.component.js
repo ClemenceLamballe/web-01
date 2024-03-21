@@ -2,7 +2,6 @@
 import { Component } from "../../scripts/component";
 import template from "../welcome/welcome.component.html";
 import "./welcome.component.css";
-
 // TODO #export-functions: remove the IIFE
 //(function () {
   // TODO #export-functions: export function WelcomeComponent

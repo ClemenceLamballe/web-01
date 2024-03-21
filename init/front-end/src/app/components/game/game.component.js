@@ -7,7 +7,6 @@ import { CardComponent } from "./card/card.component";
 import template from "./game.component.html";
 import "./game.component.css";
 
-
 //(function () {
   let environment = {
     api: {
@@ -37,12 +36,12 @@ import "./game.component.css";
     }
 
 
-  // TODO #export-functions: remove this line
-  // put component in global scope, to be runnable right from the HTML.
-  //window.GameComponent = GameComponent;
+    // TODONE #export-functions: remove this line
+    // put component in global scope, to be runnable right from the HTML.
+    //window.GameComponent = GameComponent;
 
-  // TODO #class: turn function into a method of GameComponent
-  /* method GameComponent.init */
+    // TODONE #class: turn function into a method of GameComponent
+    /* method GameComponent.init */
 
   async init(){
         this._config = await this.fetchConfig();
