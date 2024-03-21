@@ -7,23 +7,20 @@ import { CardComponent } from "./card/card.component";
 import template from "./game.component.html";
 import "./game.component.css";
 
-//(function () {
+
   let environment = {
     api: {
       host: "http://localhost:8081",
     },
   };
 
-  // TODO #export-functions: export function GameComponent
-  // TODO #class: use the ES6 class keyword
-  // TODO #extends: extend Component
 
   /* class GameComponent constructor */
   export class GameComponent extends Component{
     constructor() {
       super(template)
 
-    // TODO #extends: call super(template)
+
     // gather parameters from URL
     let params = parseUrl();
 
@@ -36,12 +33,6 @@ import "./game.component.css";
     }
 
 
-    // TODONE #export-functions: remove this line
-    // put component in global scope, to be runnable right from the HTML.
-    //window.GameComponent = GameComponent;
-
-    // TODONE #class: turn function into a method of GameComponent
-    /* method GameComponent.init */
 
   async init(){
         this._config = await this.fetchConfig();
@@ -192,12 +183,5 @@ _flipCard(card){
 }
   }
 
-  // TODO #card-component: Change images location to /app/components/game/card/assets/***.png
-  // TODO #import-assets: use ES default import to import images.
 
 
-
-// TODO #class: use the ES6 class keyword
-  // TODO #extends: extends Component
-
-//})();
