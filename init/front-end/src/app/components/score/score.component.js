@@ -7,10 +7,8 @@ import "../navbar/navbar.component.css";
 export class ScoreComponent extends Component{
     constructor() {
 
-      // TODONE #extends: call super(template)
       super(template)
       let params = parseUrl();
-      // TODONE #import-html: assign template to this.template
       this.template = template;
       this.name = params.name;
       this.size = parseInt(params.size);
@@ -19,11 +17,6 @@ export class ScoreComponent extends Component{
     }
 
 
-  // TODONE #export-functions: remove this line
-  // put component in global scope, to be runnable right from the HTML.
-  //window.ScoreComponent = ScoreComponent;
-
-  // TODONE #class: turn function into a method of ScoreComponent
   /* method ScoreComponent.init */
   init() {
 
@@ -32,4 +25,4 @@ export class ScoreComponent extends Component{
     document.getElementById("time").innerText = this.time;
   };
   }
-//})();
+

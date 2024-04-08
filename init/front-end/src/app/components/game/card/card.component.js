@@ -33,12 +33,8 @@ export class CardComponent extends Component {
     constructor(id) {
         super(CARD_TEMPLATE)
 
-        // TODO #extends: call super(CARD_TEMPLATE)
-        // is this card flipped?
         this._flipped = false;
         this.template = CARD_TEMPLATE;
-
-        // has the matching card has been discovered already?
         this.matched = false;
 
         this._elt = document.createElement("div");
@@ -58,20 +54,17 @@ export class CardComponent extends Component {
         return this._elt;
     };
 
-    // TODO #class: turn function into a method of CardComponent
     /* method CardComponent.flip */
     flip() {
         this._imageElt.classList.toggle("flip");
         this._flipped = !this._flipped;
     };
 
-    // TODO #class: turn function into a method of CardComponent
     /* method CardComponent.equals */
     equals(card) {
         return card._id === this._id;
     };
 
-    // TODO #class: turn function into a method of CardComponent
     /* CardComponent.get flipped() */
 
     get flipped() {

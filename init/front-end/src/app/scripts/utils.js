@@ -1,4 +1,4 @@
-// TODONE #export-functions: export function parseUrl
+
 
 export function parseUrl(url = window.location.href) {
   return (url.split("?")[1] ?? "")

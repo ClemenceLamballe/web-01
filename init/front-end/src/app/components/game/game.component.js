@@ -41,19 +41,16 @@ import "./game.component.css";
 
         // create cards out of the config
         this._cards = [];
-        // TODONE #functional-programming: use Array.map() instead.
           this._config.ids.forEach(id => {
           this._cards = this._config.ids.map(id => new CardComponent(id));
         });
 
-        // TODONE #functional-programming: use Array.forEach() instead.
 
           this._cards.forEach(card => {
               this._boardElement.appendChild(card.getElement());
 
               card.getElement().addEventListener(
                   "click",
-                  // TODONE #arrow-function: use arrow function instead.
                   () => {
                       this._flipCard(card);
                   }
@@ -64,27 +61,14 @@ import "./game.component.css";
       }
 
 
-  // TODO #class: turn function into a method of GameComponent
-
-  /* method GameComponent._appendCard */
-
-
-
-
-  // TODO #class: turn function into a method of GameComponent
-  /* method GameComponent.start */
-
   start(){
     this._startTime = Date.now();
     let seconds = 0;
-    // TODONE #template-literals:  use template literals (backquotes)
     document.querySelector("nav .navbar-title").textContent =
         `Player:${this._name}.Elapsed time:${seconds++}`;
 
     this._timer = setInterval(
-      // TODONE #arrow-function: use arrow function instead.
        () => {
-        // TODONE #template-literals:  use template literals (backquotes)
         document.querySelector("nav .navbar-title").textContent =
 
             `Player:${this._name}.Elapsed time:${seconds++}`;
@@ -94,7 +78,6 @@ import "./game.component.css";
   }
 
 
-  // TODO #class: turn function into a method of GameComponent
   /* method GameComponent.fetchConfig */
       async fetchConfig() {
           return fetch(`${environment.api.host}/board?size=${this._size}`).then(
@@ -103,7 +86,6 @@ import "./game.component.css";
       }
 
 
-  // TODO #class: turn function into a method of GameComponent
   /* method GameComponent.goToScore */
 
   goToScore(){
@@ -113,11 +95,8 @@ import "./game.component.css";
     clearInterval(this._timer);
 
     setTimeout(() =>{
-      // TODONE #arrow-function: use arrow function instead.
 
-        // TODO #spa: replace with './#score'
         let scorePage = "./#score";
-        // TODONE #template-literals:  use template literals (backquotes)
         window.location =
             `${scorePage}?name=${this._name}.&size=${this._size}.&time=${timeElapsedInSeconds}`;
       },
@@ -126,7 +105,6 @@ import "./game.component.css";
   }
 
 
-  // TODO #class: turn function into a method of GameComponent
   /* method GameComponent._flipCard */
 
 _flipCard(card){
@@ -166,7 +144,6 @@ _flipCard(card){
         // cards did not match
         // wait a short amount of time before hiding both cards
         setTimeout(
-          // TODONE #arrow-function: use arrow function instead.
           () => {
             // hide the cards
             this._flippedCard.flip();

@@ -1,13 +1,9 @@
-// TODO #export-router: remove this IIFE
-//(function () {
   /**
    * Append an html template to the document, at the given outlet.
    * @param HTMLElement outlet the location on the document to add the template
    * @param HTMLElement template the template to append
    *
   function renderTemplate(outlet, template) {
-    // TODO #spa: use the DOM API to remove all childNodes of the outlet element
-    // TODO #spa: use the DOM API to append the 'template' element as a child of the 'outlet' element
     while (outlet.lastChild) {
       outlet.removeChild(outlet.lastChild);
 
@@ -28,7 +24,6 @@
    */
 
 
-  // TODO #export-router: export this function
   export function Router(outlet) {
     this._components = {};
     this._templates = {};
@@ -41,7 +36,6 @@
       this._onLocationChanged(event.newURL)
     );
   }
-  // TODO #export-router: remove this assignation
   //window.Router = Router;
 
   /**
@@ -151,4 +145,3 @@
     };
     xhr.send();
   }
-//})();
